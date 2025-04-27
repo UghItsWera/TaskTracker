@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="taskmanager_stylesheet.css">
+  <link rel="icon" type="image/x-icon" href="Task Wizard (1).png">
+  <script src="To Do List Script.js" defer></script>
+  <script src="clock script.js" defer></script>
+  <script src="Planner script.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    /* Basic styles to reposition the clock and calendar at the top */
+    .top-dashboard {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px;
+      background-color: #f7f9f9; /* Or use your desired background */
+    }
+    .top-dashboard > .clock-container,
+    .top-dashboard > .calendar-container {
+      flex: 1 1 300px;
+      max-width: 500px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Task Tracker</h1>
+  </header>
+
+  <!-- Top Dashboard Section: Clock & Calendar -->
+  <section class="top-dashboard">
+    <!-- Clock Section -->
+    <div class="clock-container">
+      <div class="clock">
+        <div class="outer-clock-face">
+          <div class="marking marking-one"></div>
+          <div class="marking marking-two"></div>
+          <div class="marking marking-three"></div>
+          <div class="marking marking-four"></div>
+          <div class="inner-clock-face"></div>
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+        </div>
+      </div>
+      <div class="time">
+        <span id="hours">00</span> :
+        <span id="minutes">00</span> :
+        <span id="seconds">00</span>
+      </div>
+    </div>
+
+    <!-- Calendar Section -->
+    <div class="calendar-container">
+      <div class="wrapper">
+        <header>
+          <p class="current-date">April 2025</p>
+          <div class="icons">
+            <!-- Added id attributes for proper event handling in your JS -->
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded">chevron_right</span>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Sun</li>
+            <li>Mon</li>
+            <li>Tue</li>
+            <li>Wed</li>
+            <li>Thu</li>
+            <li>Fri</li>
+            <li>Sat</li>
+          </ul>
+          <ul class="days">
+            <!-- Calendar days will be dynamically generated here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Tasks Section -->
+    <section>
+      <h2>Tasks</h2>
+      <div class="container">
+        <div class="col">
+          <div class="title">
+            <h2>Today</h2>
+            <button id="newReminder">+</button>
+          </div>
+          <ul class="list">
+            <!-- Task list items will be dynamically inserted here -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notepad Section -->
+    <section>
+      <h2>Notepad</h2>
+      <div class="container">
+        <div class="notepad">
+          <div class="form">
+            <input type="text" id="note-input" placeholder="Type a note...">
+            <button id="add-note-btn">Add Note</button>
+          </div>
+          <ul id="note-list">
+            <!-- Notes will appear here -->
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
